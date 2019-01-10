@@ -50,8 +50,17 @@ var employees = [
     3. Return the updated employee array.
 */
 
-//Code Here
 
+employeeUpdater = () => {
+  for (let i = 0; i < employees.length; i++) {
+    if (employees[i].firstName === 'Theo') {
+      employees.splice(i, 1)
+    } else if (employees[i].firstName === 'Lorie') {
+      employees[i].department = 'HR'
+    }
+  }
+  return employees;
+}
 
 
 ////////// PROBLEM 2 //////////
@@ -61,15 +70,22 @@ var workplaceAccidents = [12, 56, 44, 3, 29, 56, 56, 3, 7, 12];
 // Do not edit the code above.
 
 /*
-  The array above represents IDs tied to reported workplace accidents. 
+  The array above represents IDs tied to reported workplace accidents.
   An employee accidentally entered in duplicates to array, making it look as though there are more accidents this year than there actually are.
     1. Write a function called 'removeDuplicates' that will remove all duplicate entries in the workplaceAccidents array.
     2. Use nested for loops to check for duplicate numbers, and then remove the duplicates from the array.
     3. Return the updated array.
 */
 
-//Code Here
-
+removeDuplicates = () => {
+  for (let i = 0; i < workplaceAccidents.length; i++) {
+    let accidents = workplaceAccidents[i]
+    if (i !== workplaceAccidents.indexOf(accidents)) {
+      workplaceAccidents.splice(i, 1)
+    }
+  }
+  return workplaceAccidents;
+}
 
 
 ////////// PROBLEM 3 //////////
@@ -81,7 +97,7 @@ var cat = {
     {
       name: 'Grumpy',
       activities: ['be grumpy', 'eat food']
-    }, 
+    },
     {
       name: 'Lazy Bones',
       activities: ['sleep', 'pre-sleep naps']
@@ -91,16 +107,14 @@ var cat = {
 // Do not edit the code above.
 
 /*
-  Fluffy has two friends, Grumpy and Lazy Bones. 
+  Fluffy has two friends, Grumpy and Lazy Bones.
     1. Assign the value of Grumpy's 2nd activity to the grumpyActivity variable below.
     2. Assign fluffy2ndFriend the name of Fluffy's 2nd friend.
 */
 
 //Code Here
-var grumpyActivity;
-var fluffy2ndFriend;
-
-
+var grumpyActivity = cat.catFriends[0].activities[1]
+var fluffy2ndFriend = cat.catFriends[1].name
 
 ////////// PROBLEM 4 //////////
 
@@ -138,7 +152,15 @@ var myCar = {
     3. Change atFaultForAccident from true to false.
 */
 
-//Code Here
+recordCleaner = () => {
+  for (let i = 0; i < myCar.accidents.length; i++) {
+    let accident = myCar.accidents[i]
+    if (accident.atFaultForAccident) {
+      accident.atFaultForAccident = false
+    }
+  }
+  return myCar.accidents
+}
 
 
 
@@ -150,13 +172,23 @@ var numsArr = [ [1, 2, 3, 4], [5, 6], [7, 8, 9, 10, 11]];
 
 /*
   Above is an array of arrays. Use two for loops.
-    1. Write a function called 'looper'. 
+    1. Write a function called 'looper'.
     2. 'looper' should loop over the arrays.
     3.  If the number is odd, replace it with 'odd'.
         If the number is even, replace it with 'even'.
     4. Return the modified numsArr.
 */
 
-//Code Here
-
-
+looper = () => {
+  for (let i = 0; i < numsArr.length; i++) {
+    for (let j = 0; j < numsArr[i].length; j++) {
+      if (numsArr[i][j] % 2 === 0) {
+        numsArr[i][j] = 'even'
+      }
+      else {
+        numsArr[i][j] = 'odd'
+      }
+    }
+  }
+  return numsArr
+}

@@ -114,8 +114,6 @@ numberGroups = ({a, b, c}) => {
   }
 }
 
-
-//
 // numberGroups = ({a, b, c}) => {
 //   let maxLength = Math.max(a.length, b.length, c.length)
 //   for (var key in obj) {
